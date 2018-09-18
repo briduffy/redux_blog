@@ -1,21 +1,15 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Fragment } from 'react'
+import Footer from './components/Footer'
+import Post from './components/Post'
+import PostFeed from './components/PostFeed'
+import PostForm from './components/PostForm'
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
-}
+const App = () => (
+  <Fragment>
+    <PostForm />
+    <PostFeed />
+    <Footer />
+  </Fragment>
+)
 
-export default App;
+export default App
