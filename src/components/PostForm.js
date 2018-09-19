@@ -9,7 +9,7 @@ class PostForm extends React.Component {
     const { dispatch, id } = this.props
     const { title, post } = this.state
     const name = { id, title, post }
-    dispatch({ type: 'ADD_POST', post })
+    dispatch({ type: 'ADD_POST', post, title })
     this.setState({ title: '', post: ''})
   }
 
