@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 //Props come into the function as an object.
 const PostFeed = ({ posts }) => (
   <div>
-    <h1>Blog Feed</h1>
+    <h3>Blog Feed</h3>
       <div>
         { posts.map( ( post, id )  => {
             return (

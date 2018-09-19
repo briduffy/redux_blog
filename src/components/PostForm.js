@@ -7,8 +7,9 @@ class PostForm extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault()
     const { dispatch, id } = this.props
-    const { post, title } = this.state
-    dispatch({ type: 'ADD_POST', title, post })
+    const { title, post } = this.state
+    const name = { id, title, post }
+    dispatch({ type: 'ADD_POST', post })
     this.setState({ title: '', post: ''})
   }
 
@@ -21,7 +22,7 @@ class PostForm extends React.Component {
     const { title, post } = this.state
     return(
       <div className='container'>
-        <h3>Write a Post</h3>
+        <h2>Write a Post</h2>
         <form onSubmit={this.handleSubmit}>
         <input
             value={title}
@@ -46,4 +47,8 @@ class PostForm extends React.Component {
   }
 }
 
-export default connect()(PostForm)
+const mapStateToProps = (state) => {
+  return { id: state.postId }
+}
+
+export default connect(mapStateToProps)(PostForm)
