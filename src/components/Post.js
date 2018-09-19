@@ -1,5 +1,14 @@
-import React from 'react'
+import React, { Fragment } from 'react'
+import { connect } from 'react-redux'
 
-const Post = () => null
+const Post = ({id, title, post, dispatch }) => (
+ <Fragment>
+   <div>
+     <h2>{title}</h2>
+      <p>{post}</p>
+    </div>
+    <hr />
+  </Fragment>
+)
 
-export default Post
+export default connect()(Post)

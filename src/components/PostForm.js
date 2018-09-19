@@ -2,14 +2,14 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 class PostForm extends React.Component {
-  state = { post: '', title: '' }
+  state = { title: '', post: '' }
 
   handleSubmit = (e) => {
     e.preventDefault()
     const { dispatch, id } = this.props
     const { post, title } = this.state
-    dispatch({ type: 'ADD_POST', post, title })
-    this.setState({ post: '', title: ''})
+    dispatch({ type: 'ADD_POST', title, post })
+    this.setState({ title: '', post: ''})
   }
 
   handleChange = (e) => {
@@ -18,7 +18,7 @@ class PostForm extends React.Component {
   }
 
   render(){
-    const { post, title } = this.state
+    const { title, post } = this.state
     return(
       <div className='container'>
         <h3>Write a Post</h3>
